@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color: #337ab7;" href="#">SmartForm</a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <a class="btn navbar-btn btn-danger btn-upload" href="#">Upload New Form</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div id="cover-page" class="text-center">
+        <h3 class="cover-heading"><i>SmartForm - Intelligent Form Filler</i></h3>
+        <button id="btn-start" class="btn btn-primary btn-upload" data-toggle="modal" data-target="#modal-upload">Get Start</button>
+    </div>
+
+    <div class="modal fade" id="modal-upload" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Upload your Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div>
+                            <input type="file" class="form-control" id="input-upload-form">
+                        </div>
+                    </form>
+                    <img id="img-form-uploaded">
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-process" type="button" class="btn btn-primary" data-dismiss="modal">Process</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-contents" class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 content-wrapper" style="padding: 0; overflow: hidden">
+                <div class="content-bar">
+                    <span class="bar-header">Re-generated Form</span>
+                    <button id="btn-fill" class="btn btn-primary">Fill Form</button>
+                </div>
+                <iframe id="iframe-page-fill" src="xml.html"></iframe>
+            </div>
+            <div class="col-md-6 col-xs-12 content-wrapper" style="padding: 0">
+                <div class="content-bar" style="padding: 0">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#img-detection-res">Detection Result</a></li>
+                        <li><a data-toggle="tab" href="#img-filled-res">Preview</a></li>
+                    </ul>
+                </div>
+                <div class="img-wrapper tab-content">
+                    <img id="img-detection-res" class="tab-pane fade in active img-viewer" src="data/detection.jpg">
+                    <img id="img-filled-res" class="tab-pane fade img-viewer" src="data/filled.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <p>Copyright © 2020 All rights reserved</p>
+        <address style="margin: 0">
+            Contact:
+            <a href="mailto:mulong.xie@anu.edu.au">mulong.xie@anu.edu.au</a>
+        </address>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+Bottoleneck Issues
+I. Detection
+1. Rectangle/line detection		√
+2. Guide word detection			√
+3. Input unit detection			√
+4. Table detection				√
+5. Reliable OCR					√
+6. Various form recognition
+    i. Horizontal alignment
+7. Testing
+	i. Bug form parameters - record
+	    1. Image size -> relative parameter
+	ii. Structured problem - new algorithm
+8. Code integration
+
+
+II. Generation
+1. Basic Component HTML				√
+2. Basic Component CSS styles  		√
+3. Layout segmentation				√
+	i. Section keyword recognition	√
+	ii. Section dividing			√
+4. Gather the input data from page	√
+5. Refill to the original form		√
+6. Page presentation                √
+7. Testing for various data
+	i. Input
+	2. Table
+
+
+III. Intelligence
+1. Data type recognition
+2. Pre-filling
+3. Audio reading the form			√
+
+
+IV. APP (Mobile/Web)
+1. Web application                  √
+2. Mobile (Later)                   -
+
+
+V. Input Source
+1. Image (jpg, png)                 √
+2. PDF                              √
+3. Scanned image ***				-
+
+
+Paper
+1. Related work
+	Detection
+	i. OCR
+	ii. Table detection
+	Generation
+	i. Web code generation
+	ii. Mobile app code generation
+	Intelligent App - Accessbility
+	i. Make a normal app easier to use
+
+
+22/2/2021
+1. Input Unit Grouping
+	a. 横向
+		Text + 右边 Rectangle -> group -> input unit 
+	b. 纵向：
+		Text + 下方 Rectangle + 左对齐 -> group -> input unit 
+
+2. Elements 之间的基本操作
+	a. 位置判断
+		i.  相邻
+		ii. 对齐
+	b. 是否包含
+
+3. 表格gouping
+
+
+
+1/3/2021
+1. Bottleneck: ocr
+	a. Other ocr (google)
+	b. Resize/Preprocess input image
+
+2. 表格gouping
+
+
+
+8/3/2021
+1. Google OCR: word - line merge
+
+2. Testing
+
+3. Layout segmentation
+
+
+
+13/3/2021
+1. Gather and test more samples
+
+2. Collect data variant
+
+3. Create more rules/algorithm
+
+4. Table heading recognition
+
+5. Trivial bugs fix
+
+
+
+18/3/2021
+I. Detection
+1. Various Data
+	i. Input box (guide text + input filed in the same rectangle) - 1.jpg, 5.jpg
+	ii. Character level input field - 5.jpg, 7.jpg
+	iii. Tick box - 7.jpg, 8.jpg
+	iv. Line mis-recog
+
+2. 	Text analysis (: ...)
+
+II. Generation
+1. Non-functional text/rect : Put on the same location
+
+2. Functional input/table : Reformat
+
+
+
+18/3/2021 - 1/4/2021
+0. Geberation Complete
+
+
+
+1/4/2021 - 4/4/2021
+1. Testing for structured variance
+
+2. Code integration
+
+3. Horizontal alignment form processing
+
+4. Draft paper (Architecture + Intro)
+
+
+4/4/2021 - 10/4/2021
+Paper:
+1. Related work
+2. Paper architecture + storyline (50%)
+Testing:
+1. Detection
+	i. Overlapping
+	ii. Dash line
+	iii. Parameters
+2. Generation
+	i. Inpput
+	ii. Table
+
+
+10/4/2021 - 15/4/2021
+Intellegience:
+1. Data type ...
+Input:
+1. Pdf
+2. Sanned img
+
+
+15/4/2021 - 20/4/2021
+Evaluation:
+1. Accuracy	*
+	i. Goround truth
+	ii. Comparison
+2. User study

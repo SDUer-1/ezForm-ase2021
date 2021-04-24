@@ -1,0 +1,378 @@
+26/2/2021
+1. Make Element class as the parent class of the Text class
+
+2. Add [element relation check]
+
+3. Count the rectangles that only contains one text as [textbox]
+
+4. Get [input units] from form elements
+    text_units: text (not contained) + textbox
+    bar_units: rectangles (not textbox) + lines + tables
+
+
+28/2/2021
+1. Add [in alignment check] for elements
+
+2. Check [guide text] by nearest neighbour in alignment
+
+
+1/3/2021
+1. Add [Input class] for input element that consists of guide text and input field
+
+2. Add [Input unit recognition] in a Form object
+
+
+2/3/2021
+1. Add [table class] for aggrate rectangles to row and columns
+
+2. Add [elements mapping dictinonary {id:element}] in Form object
+
+3. Store [sort result] in form of ids in list in Form object
+
+
+3/3/2021
+1. For a object in multiple lists, change any list will affect the others. So it's ok to sotre the sorting result directly in a list instead of storing elements' ids.
+
+2. Add [find neighbour unit]
+
+
+4/3/2021
+1. Add [row detection]
+
+2. Add [Row object] with function of [row similarity]
+
+
+5/3/2021
+1. Add [in_row] attr in elements to indicate whether the element belongs to a row
+
+2. Add [concat row] function in Row object
+
+3. In row detection, if an element is already in a row, concatenate the previous row
+
+4. Add [match tow row] function to match rows that should in the same table
+
+
+8/3/2021
+1. Detect both left forward and right forward in [row detection]
+
+2. Merge previous table of neigbour row if there is one
+
+3. Detect table in both [top and below] directions
+
+
+9/3/2021
+1. Add [in_table] in element object
+
+
+10/3/2021
+1. Test canny as binarization # Canny is not controllable, solution denied
+
+2. Store [neighbours] in element object
+
+3. Store related input object in [in_input] of element object
+
+4. Add [Google OCR]
+
+5. Add [Combine words to sentence] for Google OCR
+
+
+12/3/2021
+1. Input compound bug fix
+
+2. Multiple time run bug of table detection
+
+3. Merge Google OCR
+
+
+15/3/2021
+1. Insert elements [contained by a table] to a most matched row
+
+2. Add [heading detection] in table-detection
+
+3. Add [merge vertically intersected elements] in the same row
+
+
+16/3/2021
+1. Add [extract text content] for Textbox
+
+2. Separate [is justified] in element object
+
+3. Add [split column] according to the heading in a table
+
+4. [Remove noisy elements] that are not in some columns in a table
+
+
+17/3/2021
+1. Add [is_module_part] to show if the element is part of input or table
+
+1. Separate table refine
+
+2. Separate input refine
+
+3. [Merge text] to guide_text in an input module
+
+4. Store list of fields in an input module
+
+5. [Merge field] to input_filed in an input module
+
+6. ****** Reorgnize the folder for generation ******
+
+**************** Archive Release 0.5 *********************
+
+
+19/3/2021
+1. Add [type attr] in module elements (input, table, row)
+
+2. *** Add [form_compo_detection] function in Form.py ***
+
+
+20/3/2021
+1. Add [HTMLCompo]
+
+2. Construct basic initialization for generation
+
+
+22/3/2021
+1. Construct [HTML for compo] with differnet tags by different ways
+
+2. Construct [HTML compo] for input compound
+
+3. Construc [HTML compo] for table
+
+4. Add [page assemblying]
+
+5. Add [eport page]
+
+6. Add [init_page_css]
+
+7. Construct css for Table
+
+8. Add css style for input
+
+9. Add [text refine] to merge vertically ungrouped texts
+
+10. Add [sentence break] for vertically aligned sentences
+
+11. Add [block] to group elements in vertical alignment
+
+
+23/3/2021
+1. Add [slice block] according to compo vertical alignment
+
+2. Add init_html in Block to init its and its children's html
+
+3. Init page html and css based on the Blocks
+
+4. Sort compos in a block every time
+
+5. Set vertical alignment style for input compound
+
+
+24/3/2021
+1. Recognize the [section separator] according to keywords
+
+2. Mark block containing the sectction separator as [section title]
+
+3. Add [section wrapper] according to the section title to divide the page
+
+4. Check both guidetext and the entire input while merging intersected text into input
+
+5. Hide [content class] at first
+
+6. Add [js_script] in Page
+
+7. Add [set global page style] in Page
+
+8. Add [toggle js function] in section title to control content display
+
+
+25/3/2021
+1. Set all [global styles] in one place in Page
+
+2. Remove 'wrapper-center' and add more specific class name ['text-wrapper', 'input-wrapper']
+
+
+26/3/2021
+1. Add input field in table
+
+2. Collect input data and store in a json file
+
+
+27/3/2021
+1. *** Server *** Add server to start the process
+
+2. Add index page
+
+3. Export input fields locations
+
+4. Show generated page in iframe on index page
+
+5. Collect input data through the index page and store locally
+
+6. Overlay input data on the original img
+
+7. Decorate index page with bootstrap
+
+
+28/3/2021
+1. Add [index page]
+
+2. Construct the processing workflow
+
+
+29/3/2021
+1. Show note on the filling preview while hasn't filled
+
+2. Read the uploaded image
+
+3. Add loader while processing
+
+4. Add fialure control while clicking processing button
+
+5. Store upload image locally and process the uploaded file
+
+6. Fill the uploaded form
+
+7. Add loader while filling form
+
+8. Add export button to zip and export filled form
+
+
+30/3/2021
+1. Forcely reload the img in img-filled-res
+
+2. Fix exported img size bug
+
+3. *** Generation *** Store all locations of elements in a table with HTML id
+
+4. Allow user to insert a new row in a table
+
+5. Allow user to delete row in a table
+
+6. Add flip wrapper alignment function
+
+**************** Archive Release 1.0 *********************
+
+7. *** Generation *** Add style attr in HTML
+
+8. *** Generation *** Show all contents in the first section that doesn't has a section title
+
+9. Add icons for buttons
+
+10. Add reload button for iframe page
+
+
+1/4/2021
+*** Detection ***
+1. Recognize vertical alignment form and integrate the function into the Form object
+
+2. Add vertical separators in a Form object to store the vertical separators
+
+3. Revise the first step of form detection as check_vertical_aligned_form
+
+
+2/4/2021
+1. Set the min boundary while checking separators
+
+2. Groups units according to the separators
+
+3. Add group id in element for table and input detection
+
+4. Detect input and table according to element's group id
+
+5. Add group id in Table and Input
+
+
+3/4/2021
+1. *** Generation *** Slice block and section according to unit-group
+
+2. *** Detection *** Recognize border lines (line or rectangle) and not use it as part of Input
+
+3. Add speech content function
+
+4. Apply bootstrap to decorate the page
+
+
+5/4/2021
+*** Integration of Detection ***
+1. Add abnormal control
+
+2. Add square detection along with rectangle detection
+
+3. Check border before check textbox: If a rectangle contains only texts in it, then label the rect as type of "textbox". Else if it contains other rectangles in it, then label it as type of "border"
+
+4. Merge vertical texts in a text box
+
+5. Remove rectangles inner a text
+
+
+6/4/2021
+1. Detect Input which the text and Field in the same box, and label it as "embedded"
+
+2. Add placeholder for Input
+
+3. Don't refine Inputs of "embedded"
+
+4. Detect check box with square input field
+
+5. Recognize character box
+
+
+7/4/2021
+*** Rectangle Recognition ***
+1. Store noise and add to the next sides
+
+2. Concatenate the last sides with the first side if same slope
+
+3. Check if the last side is noise
+
+4. Set the max difference between sides more flexible for lenthy side
+
+*** Detection ***
+5. Remove redandent borders
+
+6. In character box recognition, also merge intersected rectangles and squares
+
+7. Filter out double nested shape elements
+
+10. Filter out nesting elements by summing up all its containments
+
+*** Input Recognition ***
+8. Store text nesting a square
+
+9. Combine the sqaure and its nesting text as an Input compound
+
+11. If a large rectangle containing a small piece of text, then it could be input
+
+
+8/4/2021
+*** Table Detection ***
+1. Fix square missing bug
+
+*** Input Recognition ***
+2. If the bar has no left or right neighbour, then combine it with text above
+
+*** OCR Detection ***
+3. Resize img by height
+
+4. Pass the resized img to OCR, store it first
+
+
+9/4/2021
+*** OCR Detection ***
+1. Shrink text detection result
+
+3. Remove text noises
+
+*** Input Recognition ***
+2. Set location limit for Input where A small piece of text at corner of a large Input box
+
+*** Table Detection ***
+4. Add row title detection
+
+
+11/4/2021
+*** Input Recognition ***
+1. Add bias for guidetext merging
+
+2. Merge input filed first horizontally and second vertically
